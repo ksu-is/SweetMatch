@@ -1,0 +1,72 @@
+emotion_to_genre = {
+    "happy": ["Comedy", "Adventure", "Family"],
+    "sad": ["Drama", "Romance"],
+    "excited": ["Action", "Thriller"],
+    "bored": ["Mystery", "Sci-Fi", "Fantasy"],
+    "stressed": ["Animation", "Comedy"],
+    "relaxed": ["Romantic Comedy", "Documentary"],
+    "angry": ["Action", "Thriller", "Horror"]
+}
+
+genre_to_movies = {
+    "Comedy": ["Superbad", "Step Brothers", "The Hangover"],
+    "Adventure": ["Indiana Jones", "Jumanji", "Jurassic Park"],
+    "Family": ["The Lion King", "Finding Nemo", "Toy Story"],
+    "Drama": ["The Shawshank Redemption", "Forrest Gump", "The Godfather"],
+    "Romance": ["Pride and Prejudice", "The Notebook", "La La Land"],
+    "Action": ["Mad Max: Fury Road", "Die Hard", "John Wick"],
+    "Thriller": ["Inception", "Se7en", "Fight Club"],
+    "Mystery": ["Gone Girl", "Sherlock Holmes", "The Girl with the Dragon Tattoo"],
+    "Sci-Fi": ["Blade Runner", "The Matrix", "Interstellar"],
+    "Fantasy": ["Harry Potter", "The Lord of the Rings", "Pan's Labyrinth"],
+    "Animation": ["Up", "Frozen", "Coco"],
+    "Romantic Comedy": ["Crazy Rich Asians", "10 Things I Hate About You", "When Harry Met Sally"],
+    "Documentary": ["Planet Earth", "13th", "Won't You Be My Neighbor?"],
+    "Horror": ["The Conjuring", "Get Out", "A Quiet Place"]
+}
+
+def suggest_movie(emotion):
+    # Get the list of genres for the given emotion
+    genres = emotion_to_genre.get(emotion.lower(), None)
+    
+    if not genres:
+        return "Sorry, I don't have suggestions for that emotion."
+    
+    # Pick a random genre from the list
+    genre = random.choice(genres)
+    
+    # Get the list of movies for the chosen genre
+    movies = genre_to_movies.get(genre, [])
+    
+    if not movies:
+        return "Sorry, I couldn't find any movies for the genre."
+    
+    # Pick a random movie from the list
+    movie = random.choice(movies)
+    
+    return f"Since you're feeling {emotion}, how about watching '{movie}' from the {genre} genre?"
+import random
+
+movies_by_mood = {
+    'happy': ['The Secret Life of Walter Mitty', 'La La Land', 'Amélie', 'The Intouchables', 'Singin\' in the Rain'],
+    'sad': ['The Pursuit of Happyness', 'Schindler\'s List', 'A Beautiful Mind', 'The Green Mile', 'Requiem for a Dream'],
+    'excited': ['Mad Max: Fury Road', 'Inception', 'The Dark Knight', 'Avengers: Endgame', 'Jurassic Park'],
+    'romantic': ['Pride and Prejudice', 'The Notebook', 'Titanic', 'La La Land', 'Crazy Rich Asians'],
+    'scared': ['The Conjuring', 'Hereditary', 'Get Out', 'A Quiet Place', 'The Exorcist'],
+    'relaxed': ['The Secret Life of Walter Mitty', 'Finding Nemo', 'Paddington', 'Up', 'The Grand Budapest Hotel']
+}
+def recommend_movies(mood):
+    if mood.lower() in movies_by_mood:
+        return movies_by_mood[mood.lower()]
+    else:
+        return f"Sorry, I don't have any recommendations for the mood '{mood}'."
+    
+user_mood = input("Enter your mood: ")
+recommendations = recommend_movies(user_mood)
+
+if isinstance(recommendations, list):
+    print("Based on your mood, we recommend these movies:")
+    for movie in recommendations:
+        print(f"- {movie}")
+else:
+    print(recommendations)
