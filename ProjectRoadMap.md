@@ -16,15 +16,13 @@ For SweetMatch, I plan to implement a dynamic loop system for user interaction: 
 ## Sprint 2: 
 - [ ] Build user input and random dessert suggestion logic
 - [ ] Create mood + flavor matching system
-- [ ] Add a simple text-based interface
 - [ ] Implement loop for multiple suggestions
-- [ ] Add "try a new flavor" function
 - [ ] Test input and handling and error messages
-- [ ] Clean up comments and print statements 
 
 
 ## Sprint 3:
-- [ ] Further coding, refining, and testing of the program
-- [ ] Test and debug
+- [ ] Add "try a new flavor" function
+- [ ] Clean up comments and print statements
+- [ ] Test input and handling and error messages
 
 
