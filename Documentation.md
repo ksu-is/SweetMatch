@@ -14,3 +14,7 @@ After three suggestions, the program will ask if the user wants to try a differe
 If the user chooses a new flavor (same emotion), the program outputs a new set of dessert suggestions.
 If the user does not want to try a new flavor, they can quit the program.
 This approach will make the code interactive and user-friendly, unlike the static original code, while also eliminating duplicate logic and centralizing the recommendation process.
+
+changed the movie by mood and recommend move to recommend dessert and dessert by mood
+
+change flavors creamy = decadent, rich, creamy, add nutty/spiced, add multiple choice select for user input, cycle through 1 dessert output then 2 then 3 for mood, add description maybe
