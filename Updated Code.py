@@ -6,31 +6,32 @@ dessert_by_mood = {
     'happy':{
         "chocolate": ["Chocolate Lava Cake", "Brownie Sundae", "S'mores"],
         "fruity": ["Strawberry Shortcake", "Lemon Blueberry Muffins", "Raspberry Sorbet"],
-        "creamy": ["New York Cheesecake", "Banana Pudding", "Creme Puffs"]
+        "creamy": ["New York Cheesecake", "Banana Pudding", "Creme Puffs"],
     },
     'sad/stressed': {
         "chocolate": ["Warm Chocolate Chip Skillet Cookie", "Flourless Chocolate Cake", "Double Fudge Brownies"],
         "fruity": ["Blackberry Cobbler", "Banana Bread", "Apple Turnover with Vanilla Bean Ice Cream"],
-        "creamy": ["Rice Pudding", "Jumbo Cinnamon Rolls", "Spanish Flan"]
+        "creamy": ["Rice Pudding", "Jumbo Cinnamon Rolls", "Spanish Flan"],
     },
     'cozy/romantic': {
         "chocolate": ["Black Forest Cake", "Hot Cocoa Bombs", "Red Velvet Cake "],
         "fruity": ["Berry Pavlova", "Vanilla Bourbon Poached Pears", "Chocolate-Covered Strawberries"],
-        "creamy": ["Creme Brulee", "Tiramisu", "White Chocolate Mousse"]
+        "creamy": ["Creme Brulee", "Tiramisu", "White Chocolate Mousse"],
     },
     'adventurous': {
         "chocolate": ["Chili Chocolate Pudding with Grilled Peaches", "White Chocolate Matcha Cookies", "Lavender Chocolate Truffles"],
         "fruity": ["Blood Orange Sorbet", "Guava Cheesecake", "Watermelon Mint Granita"],
-        "creamy": ["Masala Chai Panna Cotta", "Ube Mochi Ice Cream", "Lychee Mille-Feuille"]
+        "creamy": ["Masala Chai Panna Cotta", "Ube Mochi Ice Cream", "Lychee Mille-Feuille"],
     }
 }
 
 def prompt_menu(prompt,options):
     print(prompt)
     for letter, label in options.items():
-    print(f"{letter}.{label}")
-choice = input("Choose an option: ").lower()
-return options.get(choice)
+        print(f"{letter}.{label}")
+
+    choice = input("Choose an option: ").lower()
+    return options.get(choice)
 
 
 print("Hello! How are you feeling today?\n")
