@@ -69,4 +69,5 @@ if isinstance(recommendations, list):
     for movie in recommendations:
         print(f"- {movie}")
 else:
-    print(recommendations)
+    print(recommendations) bdsjhfbsjhfbdhjbfdsjhfbdjhfb
+
