@@ -68,15 +68,16 @@ desserts = dessert_by_mood[mood][flavor]
 print(f"\nSince you're feeling {mood}, here are some {flavor} desserts!\n")
 
 for dessert in desserts:
-    print(f"How about: {dessert}?")
-    answer = input("So you like this suggestion? (y/n): ").lower()
+    print(f"How about: {dessert}? ")
+    answer = input("Do you like this suggestion?(y/n)").lower()
 
     if answer == "y":
-        print("Enjoy your dessert!")
+        print("Enjoy your treat!")
         quit()
     else:
         print("Okay, let's try another...\n")
 print("Those were all the dessert options! \n Restart the program to try again.")
+
 
 
 
