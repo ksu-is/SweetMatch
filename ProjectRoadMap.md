@@ -21,7 +21,10 @@ For SweetMatch, I plan to implement a dynamic loop system for user interaction: 
 
 
 ## Sprint 3:
-- [ ] Add "try a new flavor" function
+- [ ] Add "try a new flavor or mood" function when the user doesn't like the 3 dessert recommendations given based on the selected mood and flavor.
+- [ ] Add new line of code that when the user inputs something not in the dictionary, it will allow them to try again and not quit the program after.
+- [ ] Edit the farewell code output with something like "... treat yourself soon!"
+- [ ] Implement more comments explaining the process in the code.
 - [ ] Clean up comments and print statements
 - [ ] Test input and handling and error messages
 
