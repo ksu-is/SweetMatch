@@ -14,10 +14,10 @@ Running the code, I encountered some problems. There was a list of emotions, but
 For SweetMatch, I plan to implement a dynamic loop system for user interaction: The user inputs their mood/emotion and flavor preference. The program provides a random dessert recommendation. If the user doesn’t like the recommendation, it will give up to two additional options. After three suggestions, the program will ask if the user wants to try a different flavor. If the user chooses a new flavor (same emotion), the program outputs a new set of dessert suggestions. If the user does not want to try a new flavor, they can quit the program. This approach will make the code interactive and user-friendly, unlike the static original code, while also eliminating duplicate logic and centralizing the recommendation process.
 
 ## Sprint 2: 
-- [ ] Build user input and random dessert suggestion logic
-- [ ] Create mood + flavor matching system
-- [ ] Implement loop for multiple suggestions
-- [ ] Test input and handling and error messages
+- [x] Build user input and random dessert suggestion logic
+- [x] Create mood + flavor matching system
+- [x] Implement loop for multiple suggestions
+- [x] Test input and handling and error messages
 
 
 ## Sprint 3:
