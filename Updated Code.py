@@ -26,12 +26,16 @@ dessert_by_mood = {
 }
 
 def prompt_menu(prompt,options):
-    print(prompt)
-    for letter, label in options.items():
-        print(f"{letter}.{label}")
-
-    choice = input("Choose an option: ").lower()
-    return options.get(choice)
+    while True:
+        print(prompt)
+        for letter, label in options.items():
+            print(f"{letter}.{label}")
+        choice = input("Choose an option: ").strip().lower()
+        if choice == 'q':
+            return 'q'
+        if choice in options:
+            return options [choice]
+        print("\nInvalid choice - please try again.\n")
 
 
 print("Hello! How are you feeling today?\n")
