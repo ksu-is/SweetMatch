@@ -40,47 +40,64 @@ def prompt_menu(prompt,options):
 
 print("Hello! How are you feeling today?\n")
 
-mood_options = {
-    "a": "happy",
-    "b": "sad/stressed",
-    "c": "cozy/romantic",
-    "d": "adventurous"
+while True:
+    mood_options = {
+        "a": "happy",
+        "b": "sad/stressed",
+        "c": "cozy/romantic",
+        "d": "adventurous"
+    }
+
+    mood = prompt_menu ("Select your mood (or press q to quit): ", mood_options)
+    if mood == 'q':
+        print("\nNo worries - treat yourself soon!")
+        break
+
+
+    flavor_options = {
+        "a": "chocolate",
+        "b": "fruity",
+        "c": "creamy"
 }
 
-mood = prompt_menu ("Select your mood: ", mood_options)
+    flavor = prompt_menu ("What flavor are you craving?: ", flavor_options)
+    if flavor == 'q':
+        print ("\nNo worries - treat yourself soon!")
+        break
 
-if not mood:
-    print("Sorry, I couldn't find recommendations for that mood.")
-    quit()
-
-
-flavor_options = {
-    "a": "chocolate",
-    "b": "fruity",
-    "c": "creamy"
-}
-
-flavor = prompt_menu ("What flavor are you craving?", flavor_options)
-
-if not flavor:
-    print("Sorry, I couldn't find recommendations for that flavor.")
-    quit()
 
 # get dessert list
-desserts = dessert_by_mood[mood][flavor]
+    desserts = dessert_by_mood[mood][flavor]
 
-print(f"\nSince you're feeling {mood}, here are some {flavor} desserts!\n")
+    print(f"\nSince you're feeling {mood}, and craving something {flavor} , here are some desserts!\n")
 
-for dessert in desserts:
-    print(f"How about: {dessert}? ")
-    answer = input("Do you like this suggestion?(y/n)").lower()
+    accepted = False
+    for index, dessert in enumerate(desserts):
+        print(f"How about: {dessert}? ")
+        answer = input("Do you like this suggestion?(y/n)").strip().lower()
+        if answer == "q":
+            print("\nNo worries - treat yourself soon!")
+            accepted = True 
+            break
+        if answer == "y":
+            print("\nEnjoy your treat!")
+            accepted = True
+            break
+        if index < len(desserts) - 1:
+            print("Okay, let's try another...\n")
+    if accepted:
+        break
+    while True:
+        retry = input("\nYou didn't like any of those recommendations, would you like to try a new mood or flavor? (y/n): ").strip().lower()
+        if retry == 'y':
+            print("\nRestarting...\n")
+            break
+        elif retry == 'n' or retry == 'q':
+            print("\nNo worries - treat yourself soon!")
+            exit()
+        else: 
+            print("Please enter 'y' or 'n'. ")
 
-    if answer == "y":
-        print("Enjoy your treat!")
-        quit()
-    else:
-        print("Okay, let's try another...\n")
-print("Those were all the dessert options! \n Restart the program to try again.")
 
 
 
